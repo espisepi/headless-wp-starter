@@ -40,21 +40,21 @@ wp core install \
 wp option update blogdescription "$WORDPRESS_DESCRIPTION"
 wp rewrite structure "$WORDPRESS_PERMALINK_STRUCTURE"
 
-wp theme activate postlight-headless-wp
-wp theme delete twentysixteen twentyseventeen twentynineteen twentytwenty
+# wp theme activate postlight-headless-wp
+# wp theme delete twentysixteen twentyseventeen twentynineteen twentytwenty
 
 wp plugin delete akismet hello
 wp plugin install --activate --force \
-    acf-to-wp-api \
-    advanced-custom-fields \
-    custom-post-type-ui \
-    wordpress-importer \
-    wp-rest-api-v2-menus \
-    jwt-authentication-for-wp-rest-api \
-    https://github.com/wp-graphql/wp-graphql/archive/v0.3.6.zip \
-    https://github.com/wp-graphql/wp-graphql-jwt-authentication/archive/V0.3.2.zip \
     /var/www/plugins/*.zip
 
+# https://github.com/wp-graphql/wp-graphql/archive/v0.3.6.zip \
+# acf-to-wp-api \
+# advanced-custom-fields \
+# custom-post-type-ui \
+# wordpress-importer \
+# wp-rest-api-v2-menus \
+# jwt-authentication-for-wp-rest-api \
+# https://github.com/wp-graphql/wp-graphql-jwt-authentication/archive/V0.3.2.zip \
 wp term update category 1 --name="Sample Category"
 wp post delete 1 2
 
